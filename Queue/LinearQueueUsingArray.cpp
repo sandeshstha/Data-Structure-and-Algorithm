@@ -3,9 +3,8 @@ using namespace std;
 
 int Queue[5], MaxSize =5, front = 0, rear = -1;
 
-void insert()
+void insert(int data)
 {
-	int data;
 	if(rear == MaxSize-1)
 	{
 		cout<<"Queue is full."<<endl;
@@ -14,8 +13,6 @@ void insert()
 	else
 	{
 		rear++;
-		cout<<"enter the data in Queue"<<endl;
-		cin>>data;
 		Queue[rear] = data;
 	}
 }
@@ -49,7 +46,7 @@ void display()
 }
 int main()
 {
-	int choice;
+	int choice,data;
 	cout<<"1. Insert data in queue"<<endl;
 	cout<<"2. Delete data from queue"<<endl;
 	cout<<"3. display all elements"<<endl;
@@ -62,7 +59,10 @@ int main()
 
 		switch(choice)
 		{
-			case 1: insert();
+			case 1: 
+				cout<<"enter the data in Queue"<<endl;
+				cin>>data;
+				insert(data);
 			break;
 			case 2: deleteData();
 			break;
